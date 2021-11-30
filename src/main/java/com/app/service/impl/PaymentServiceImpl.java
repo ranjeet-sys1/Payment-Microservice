@@ -20,6 +20,13 @@ public class PaymentServiceImpl implements PaymentService {
         return paymentRepository.save(payment);
 
     }
+
+    @Override
+    public Payment findByOrderId(Long orderId) {
+        Payment paymentDetails =paymentRepository.findByOrderId(orderId);
+        return paymentDetails;
+    }
+
     public String paymentProcessing(){
         return  new Random().nextBoolean() ?"success":"false";
     }
